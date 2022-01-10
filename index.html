@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="lab5.js"></script>
+  </head>
+  <body>
+    <h1>FSK adresar</h1>
+    <h3>Input Student</h3>
+    <input id="firstName" placeholder="First Name" />
+    <input id="lastName" placeholder="Last Name" />
+    <input id="studentID" placeholder="Student ID" />
+    <br />
+    <br />
+    <input id="department" placeholder="Department" />
+    <input id="cycle" placeholder="Cycle" />
+    <input id="semester" placeholder="Semester" />
+    <br />
+    <br />
+    <button
+      onclick="insertStudent(
+    document.getElementById('firstName').value,
+    document.getElementById('lastName').value,
+    document.getElementById('studentID').value,
+    document.getElementById('department').value,
+    document.getElementById('cycle').value,
+    document.getElementById('semester').value
+   );"
+    >
+      Insert Student
+    </button>
+
+    <h3>Find Student by ID</h3>
+    <input id="ID" placeholder="Student ID" />
+    <br />
+    <br />
+    <button onclick="outputStudent(document.getElementById('ID').value);">
+      Find Student
+    </button>
+    <p id="output"></p>
+  </body>
+</html>
