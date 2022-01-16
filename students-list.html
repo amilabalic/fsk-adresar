@@ -5,17 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="lab5.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <script src="lab5.js"></script>
   </head>
   <body>
-    <div class="index">
-      <h3>Dobrodošli u FSK adresar</h3>
-      <p>Molim odaberite jednu opciju</p>
-      <a href="students-add.html">Unos studenta</a>
-      <a href="students-search.html">Pretraga studenata</a>
+    <header class="header">
+      <a href="index.html">FSK adresar</a>
+    </header>
+    <div class="lista">
+      <button class="btn" onclick="listStudents()">Lista studenata</button>
       <br />
-      <a href="students-list.html">Lista studenata</a>
+      <br />
+      <p id="output1"></p>
     </div>
   </body>
 </html>

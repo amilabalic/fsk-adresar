@@ -1,6 +1,12 @@
-let students = [];
+function getStudentsFromStorage() {
+  return JSON.parse(sessionStorage.getItem("students"));
+}
 
-function insertStudent(
+function setStudentToStorage(students) {
+  sessionStorage.setItem("students", JSON.stringify(students));
+}
+
+/*function insertStudent(
   firstName,
   lastName,
   studentID,
@@ -17,10 +23,75 @@ function insertStudent(
     semester: semester,
   };
   students.push(student);
+  document.getElementById("firstName").value = "";
+  document.getElementById("lastName").value = "";
+  document.getElementById("studentID").value = "";
+  document.getElementById("department").value = "";
+  document.getElementById("cycle").value = "";
+  document.getElementById("semester").value = "";
+}*/
+
+function insertStudentToStorage(
+  firstName,
+  lastName,
+  studentID,
+  department,
+  cycle,
+  semester
+) {
+  var students = [];
+  var studentsFromStorage = JSON.parse(sessionStorage.getItem("students"));
+  if (studentsFromStorage != null) students = studentsFromStorage;
+  let student = {
+    firstName: firstName,
+    lastName: lastName,
+    studentID: studentID,
+    department: department,
+    cycle: cycle,
+    semester: semester,
+  };
+  students.push(student);
+  setStudentToStorage(students);
+  document.getElementById("firstName").value = "";
+  document.getElementById("lastName").value = "";
+  document.getElementById("studentID").value = "";
+  document.getElementById("department").value = "";
+  document.getElementById("cycle").value = "";
+  document.getElementById("semester").value = "";
 }
 
-function outputStudent(studentID) {
+function outputStudentFromStorage(studentID) {
+  console.log(getStudentsFromStorage());
+  var wantedStudent = findStudent(studentID);
+  if (wantedStudent === undefined) {
+    document.getElementById("output").innerHTML =
+      "Wanted student couldn't be found";
+  } else {
+    document.getElementById("output").innerHTML =
+      wantedStudent.firstName + " " + wantedStudent.lastName;
+  }
+  console.log(wantedStudent);
+}
+function findStudent(studentID) {
+  var studentsFromStorage = JSON.parse(sessionStorage.getItem("students"));
+  if (studentsFromStorage != null) {
+    return getStudentsFromStorage().find(
+      (student) => student.studentID == studentID
+    );
+  } else return undefined;
+}
+/*function outputStudent(studentID) {
   let student = students.find((student) => student.studentID === studentID);
   document.getElementById("output").innerHTML =
     student.firstName + " " + student.lastName;
+}*/
+
+function listStudents() {
+  var students = getStudentsFromStorage();
+  var studentsTableHTML = "";
+  for (let i = 0; i < students.length; i++) {
+    studentsTableHTML += ` ${students[i].studentID}
+${students[i].firstName} ${students[i].lastName} `;
+  }
+  document.getElementById("output1").innerHTML = studentsTableHTML;
 }

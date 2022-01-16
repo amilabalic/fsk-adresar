@@ -9,13 +9,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="index">
-      <h3>Dobrodošli u FSK adresar</h3>
-      <p>Molim odaberite jednu opciju</p>
-      <a href="students-add.html">Unos studenta</a>
-      <a href="students-search.html">Pretraga studenata</a>
+    <header class="header">
+      <a href="index.html">FSK adresar</a>
+    </header>
+    <div class="display">
+      <input id="ID" placeholder="Student ID" />
       <br />
-      <a href="students-list.html">Lista studenata</a>
+      <br />
+      <button
+        class="btn"
+        onclick="outputStudentFromStorage(getElementById('ID').value);"
+      >
+        Find Student
+      </button>
+      <p id="output"></p>
     </div>
+    <p id="output"></p>
   </body>
 </html>
