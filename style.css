@@ -9,8 +9,8 @@ body {
 .index {
   border: 1px solid rgb(65, 62, 62);
   text-align: center;
-  width: 25%;
-  height: 25%;
+  width: 28%;
+  height: 28%;
   border-radius: 3%;
   justify-content: center;
   padding: 50px 10px;
@@ -37,7 +37,7 @@ body {
   padding: 15px;
   background-color: black;
   text-align: center;
-  border-bottom: 4px solid rgb(128, 128, 128);
+  border-bottom: 5px solid #999999;
 }
 .header a {
   color: white;
@@ -59,7 +59,8 @@ body {
 #cycle,
 #semester {
   width: 173%;
-  padding: 5px 10px;
+  height: 40px;
+  padding: 2px 10px;
   margin: 5px 0;
   display: inline-block;
   border: 1px solid #ccc;
@@ -149,6 +150,5 @@ body {
   font-size: large;
   position: relative;
   text-align: center;
-  top: 100px;
-  right: 670px;
+  left: 33px;
 }

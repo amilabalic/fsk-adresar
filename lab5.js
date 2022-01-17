@@ -90,8 +90,8 @@ function listStudents() {
   var students = getStudentsFromStorage();
   var studentsTableHTML = "";
   for (let i = 0; i < students.length; i++) {
-    studentsTableHTML += ` ${students[i].studentID}
-${students[i].firstName} ${students[i].lastName} `;
+    studentsTableHTML += `Student ID: ${students[i].studentID} <br> First Name:
+${students[i].firstName} <br> Last Name: ${students[i].lastName} <br> <br> `;
   }
   document.getElementById("output1").innerHTML = studentsTableHTML;
 }
